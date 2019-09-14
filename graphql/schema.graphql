@@ -1,3 +1,15 @@
-type Query {
+"""
+Schema defines format of your data.
+Define how your data's gonna look like.
+"""
+type Person {
+  id: Int!
   name: String!
+  age: Int!
+  gender: String!
+}
+
+type Query {
+  people: [Person]!
+  person(id: Int!): Person
 }
