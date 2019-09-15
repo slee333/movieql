@@ -1,15 +1,22 @@
-"""
-Schema defines format of your data.
-Define how your data's gonna look like.
-"""
-type Person {
+# * Schema defines format of your data.
+# Define how your data's gonna look like.
+
+
+type Movie {
   id: Int!
   name: String!
-  age: Int!
-  gender: String!
+  score: Int!
 }
 
 type Query {
-  people: [Person]!
-  person(id: Int!): Person
+  movies: [Movie]!
+  movie(id: Int!): Movie
+}
+
+# * Mutation should be defined with Query at the same file
+# Id will be auto-generated
+# function (field:type!, field2: type2): return
+type Mutation {
+  addMovie(name:String!, score: Int!): Movie!
+  deleteMovie( id: Int! ): Boolean!
 }
