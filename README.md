@@ -73,3 +73,9 @@ So in GraphQL...
 - Define how your data's gonna look @ **schema**
 - Use **resolver** to resolve **operations**
 - Schema is kinda like URL and resolver is kinda like view.
+
+## Lecture 8~10: Defining mutations
+
+## Lecture 12
+
+Wrapping REST API with GraphQL

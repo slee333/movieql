@@ -1,4 +1,4 @@
-import { getMovies, getById, addMovie, deleteMovie } from "./db";
+import { getMovies } from "./db";
 
 /*
 * In resolvers, you create functions that resolves operation
@@ -10,13 +10,8 @@ And you can have any array of DBs.
 const resolvers = {
   // people return people as an array
   Query: {
-    movies: () => getMovies(),
-    movie: (_obj_, { id }) => getById(id)
+    movies: (_, {rating,limit}) => getMovies(limit,rating),
   },
-  Mutation: {
-    addMovie: (_, { name, score }) => addMovie(name, score),
-    deleteMovie: (_, {id}) => deleteMovie(id)
-  }
 };
 
 export default resolvers;
